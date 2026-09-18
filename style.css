@@ -1,3 +1,23 @@
+:root {
+  color-scheme: light dark;
+  --text-primary: light-dark(#403f3d, #e1d4c9);
+  --text-inverse: light-dark(#e1d4c9, #e1d4c9);
+  --text-accent: light-dark(#b0907a, #b0907a);
+  --bg-page: light-dark(#e1d4c9, #292826);
+  --bg-container: light-dark(#665f55, #403f3d);
+  --bg-overlay: light-dark(#403f3dcc, #292826cc);
+  --border-primary: light-dark(#c1b6ad, #665f55);
+  --border-inverse: light-dark(#665f55, #c1b6ad);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 * {
   margin: 0;
   padding: 0;
