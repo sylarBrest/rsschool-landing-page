@@ -104,6 +104,7 @@ html {
   font-size: 60px;
 }
 
+.slider-content_about-title,
 .contacts-container_title {
   line-height: 125%;
   font-size: 24px;
@@ -112,6 +113,66 @@ html {
 .title .accent {
   font-style: italic;
   color: var(--text-accent);
+}
+
+.slider-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.slider-section_title {
+  text-align: center;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+}
+
+.slider-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--border-primary);
+  padding: 0;
+}
+
+.flat-button {
+  width: 40px;
+  height: 4px;
+  padding: 0;
+  background-color: var(--border-primary);
+}
+
+.flat-button.active {
+  background-color: var(--border-inverse);
+}
+
+.slider-content {
+  width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.slider-image {
+  width: 100%;
+}
+
+.slider-content_about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .footer {
