@@ -5,34 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header class="header">
-      <div></div>
+      <div class="header_main-page"><a href="#">
+          <object data="assets/svg/icon.svg" type="image/svg+xml">
+            <span>Your browser doesn't support SVG images</span>
+          </object>
+        </a></div>
       <nav class="header-menu">
         <ul class="header-menu_list">
-          <li class="header-menu_list-iteem">Favorite coffee</li>
-          <li class="header-menu_list-iteem">About</li>
-          <li class="header-menu_list-iteem">Mobile app</li>
-          <li class="header-menu_list-iteem">Contact us</li>
+          <li class="header-menu_list-item"><a class="list-item_link">Favorite coffee</a></li>
+          <li class="header-menu_list-item"><a class="list-item_link">About</a></li>
+          <li class="header-menu_list-item"><a class="list-item_link">Mobile app</a></li>
+          <li class="header-menu_list-item"><a class="list-item_link">Contact us</a></li>
         </ul>
       </nav>
-      <div></div>
-      <div class="header-menu_button">Menu</div>
+      <div class="header_theme-selector"></div>
+      <div class="header_menu-button">Menu</div>
     </header>
     <main class="main">
       <section class="hero-section">
-        <h1 class="hero-heading"><span>Enjoy</span> premium coffee at our charming cafe</h1>
-        <p class="hero-about">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a
-          popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite
-          beverage.</p>
-        <button class="hero-button"></button>
+        <div class="hero-section_container">
+          <h1 class="hero-section_title title"><span class="accent">Enjoy</span> premium coffee at our charming cafe
+          </h1>
+          <p class="hero-section_about">With its inviting atmosphere and delicious coffee options, the Coffee House
+            Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy
+            their favorite beverage.</p>
+          <button class="hero-section_button button">Menu</button>
+        </div>
       </section>
       <section class="slider-section">
-        <h2 class="slider-heading">Choose your <span>favorite</span> coffee</h2>
+        <h2 class="slider-section_title title section_title">Choose your <span class="accent">favorite</span> coffee
+        </h2>
         <div class="slider-container">
           <button class="prev button"></button>
           <div class="slider">
@@ -51,7 +64,8 @@
         </div>
       </section>
       <section class="about-section">
-        <h2 class="about-section_title">Resource is <span>the perfect and cozy place</span> where you can enjoy a
+        <h2 class="about-section_title title section_title">Resource is <span>the perfect and cozy place</span> where
+          you can enjoy a
           variety of hot
           beverages, relax, catch up with friends, or get some work done.</h2>
         <div class="about-section_images">
@@ -63,7 +77,8 @@
       </section>
       <section class="mobile-app-section">
         <div class="mobile-app-section_container">
-          <h2 class="mobile-app-section_title"><span>Download</span> our app to start ordering</h2>
+          <h2 class="mobile-app-section_title title section_title"><span class="accent">Download</span> our app to start
+            ordering</h2>
           <p class="mobile-app-section_about">Download the Resource app today and experience the comfort of ordering
             your favorite coffee from wherever you are</p>
           <div class="mobile-app-section_download-buttons">
@@ -75,21 +90,24 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="deviz-container">
-        <h2 class="deviz-container_title">Sip, Savor, Smile. <span>It's coffee time!</span></h2>
-        <div class="social-buttons">
-          <img src="" alt="Twitter" class="social-button twitter">
-          <img src="" alt="Instagram" class="social-button instagram">
-          <img src="" alt="Facebook" class="social-button facebook">
+      <div class="footer-container">
+        <div class="deviz-container">
+          <h2 class="deviz-container_title title section_title">Sip, Savor, Smile. <span class="accent">It's coffee
+              time!</span></h2>
+          <div class="social-buttons">
+            <img src="" alt="Twitter" class="social-button twitter">
+            <img src="" alt="Instagram" class="social-button instagram">
+            <img src="" alt="Facebook" class="social-button facebook">
+          </div>
         </div>
-      </div>
-      <div class="contacts-container">
-        <h3 class="contacts-tcontainer_itle">Contact us</h3>
-        <ul class="contacts-list">
-          <li class="contact-item">8558 Green Rd., LA</li>
-          <li class="contact-item">+1 (603) 555-0123</li>
-          <li class="contact-item">Mon-Sat: 9:00-23:00</li>
-        </ul>
+        <div class="contacts-container">
+          <h3 class="contacts-container_title title">Contact us</h3>
+          <ul class="contacts-list">
+            <li class="contact-item">8558 Green Rd., LA</li>
+            <li class="contact-item">+1 (603) 555-0123</li>
+            <li class="contact-item">Mon-Sat: 9:00-23:00</li>
+          </ul>
+        </div>
       </div>
     </footer>
 
