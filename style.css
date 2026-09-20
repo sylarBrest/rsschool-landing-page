@@ -74,6 +74,7 @@ html {
   border-radius: 100px;
   background-color: var(--bg-page);
   font-weight: 600;
+  cursor: pointer;
 }
 
 .hero-section {
@@ -90,7 +91,10 @@ html {
 
 .hero-section_container {
   inline-size: 530px;
-  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 100px;
 }
 
 .hero-section_title {
@@ -99,7 +103,7 @@ html {
 }
 
 .hero-section_button {
-  margin-top: 40px;
+  align-self: flex-start;
 }
 
 .section_title {
@@ -276,9 +280,57 @@ html {
 
 .footer {
   padding: 100px 40px 40px;
+  color: var(--text-inverse);
 }
 
 .footer-container {
   background-color: var(--bg-container);
   border-radius: 40px;
+  padding: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.deviz-container,
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-button {
+  inline-size: 60px;
+  block-size: 60px;
+  padding: 0;
+  background-color: var(--bg-container);
+  border: 1px solid var(--border-primary);
+}
+
+.contacts-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.address::before {
+  content: url('assets/svg/place.svg');
+  margin-right: 4px;
+}
+
+.phone::before {
+  content: url('assets/svg/phone.svg');
+  margin-right: 4px;
+}
+
+.worktime::before {
+  content: url('assets/svg/clock.svg');
+  margin-right: 4px;
 }
