@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Italic (Курсив) */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 3. SemiBold (Полужирный) */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  /* 600 — это стандартное цифровое значение для SemiBold */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 4. SemiBold Italic (Полужирный курсив) */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light dark;
   --text-primary: light-dark(#403f3d, #e1d4c9);
@@ -26,7 +62,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
   font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -45,6 +85,15 @@ html {
   display: flex;
   align-items: center;
   padding: 20px 40px;
+  font-weight: 600;
+  gap: 24px;
+}
+
+.main-icon {
+  display: flex;
+  inline-size: 100px;
+  block-size: 60px;
+  fill: var(--text-primary);
 }
 
 .header-menu {
@@ -57,8 +106,49 @@ html {
   list-style-type: none;
 }
 
+.header_theme-selector {
+  display: flex;
+  gap: 8px;
+  padding: 3px;
+  border-radius: 100px;
+  border: 1px solid var(--border-primary);
+}
+
+.button {
+  border: 0;
+  border-radius: 100px;
+  background-color: var(--bg-page);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-button {
+  padding: 8px;
+}
+
+.light {
+  background-color: var(--bg-container);
+}
+
+.header_menu-button {
+  display: flex;
+  gap: 10px;
+}
+
+.cup-icon {
+  inline-size: 20px;
+  block-size: 20px;
+  fill: none;
+  stroke: var(--text-primary);
+}
+
 .list-item_link {
   text-decoration: none;
+  color: inherit;
 }
 
 .main {
@@ -66,15 +156,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 100px;
-}
-
-.button {
-  padding: 22px 78px;
-  border: 0;
-  border-radius: 100px;
-  background-color: var(--bg-page);
-  font-weight: 600;
-  cursor: pointer;
 }
 
 .hero-section {
@@ -104,6 +185,7 @@ html {
 
 .hero-section_button {
   align-self: flex-start;
+  padding: 20px 78px;
 }
 
 .section_title {
@@ -182,6 +264,10 @@ html {
   gap: 16px;
 }
 
+.slider-content_about-description {
+  text-align: center;
+}
+
 .about-section {
   display: flex;
   flex-direction: column;
@@ -207,6 +293,12 @@ html {
   object-fit: cover;
   border-radius: 20px;
   object-position: center;
+  object-view-box: inset(5%);
+  transition: object-view-box 0.3s ease-in-out;
+}
+
+.about-section_image:hover {
+  object-view-box: inset(0%);
 }
 
 .image1 {
@@ -245,26 +337,31 @@ html {
 
 .mobile-app-section_download-button {
   border: 1px solid var(--border-primary);
-  padding: 12px 20px;
-  text-align: left;
+  padding: 10px 20px;
+  inline-size: 200px;
+  align-self: auto;
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .text-wrap {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   gap: 2px;
+  align-items: flex-start;
 }
 
-.apple::before {
-  content: url('assets/svg/apple.svg');
-  margin-right: 8px;
+.apple-icon {
+  inline-size: 27px;
+  block-size: 32px;
+  fill: var(--text-primary);
 }
 
-.google::before {
-  content: url('assets/svg/gplay.svg');
-  margin-right: 8px;
+.google-play-icon {
+  inline-size: 31px;
+  block-size: 33px;
+  fill: var(--text-primary);
 }
 
 .caption {

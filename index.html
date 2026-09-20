@@ -5,32 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee House</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header class="header">
-      <div class="header_main-page"><a href="#">
-          <object data="assets/svg/icon.svg" type="image/svg+xml">
-            <span>Your browser doesn't support SVG images</span>
-          </object>
-        </a></div>
+      <a href="#" class="header_main-page">
+        <svg class="main-icon">
+          <use href="assets/svg/sprites.svg#main-icon"></use>
+        </svg>
+      </a>
       <nav class="header-menu">
         <ul class="header-menu_list">
-          <li class="header-menu_list-item"><a class="list-item_link">Favorite coffee</a></li>
-          <li class="header-menu_list-item"><a class="list-item_link">About</a></li>
-          <li class="header-menu_list-item"><a class="list-item_link">Mobile app</a></li>
-          <li class="header-menu_list-item"><a class="list-item_link">Contact us</a></li>
+          <li class="header-menu_list-item"><a href="#favorite" class="list-item_link">Favorite coffee</a></li>
+          <li class="header-menu_list-item"><a href="#about" class="list-item_link">About</a></li>
+          <li class="header-menu_list-item"><a href="#mobile-app" class="list-item_link">Mobile app</a></li>
+          <li class="header-menu_list-item"><a href="#contact-us" class="list-item_link">Contact us</a></li>
         </ul>
       </nav>
-      <div class="header_theme-selector"></div>
-      <div class="header_menu-button">Menu</div>
+      <div class="header_theme-selector">
+        <button class="theme-button button light">
+          <img src="assets/svg/sun.svg" alt="Light theme" class="theme-image">
+        </button>
+        <button class="theme-button button dark">
+          <img src="assets/svg/moon.svg" alt="Dark theme" class="theme-image">
+        </button>
+      </div>
+      <div class="header_menu-button">
+        <span>Menu</span>
+        <svg class="cup-icon">
+          <use href="assets/svg/sprites.svg#cup"></use>
+        </svg>
+      </div>
     </header>
     <main class="main">
       <section class="hero-section">
@@ -43,7 +50,7 @@
           <button class="hero-section_button button">Menu</button>
         </div>
       </section>
-      <section class="slider-section">
+      <section class="slider-section" id="favorite">
         <h2 class="slider-section_title title section_title">Choose your <span class="accent">favorite</span> coffee
         </h2>
         <div class="slider-container">
@@ -55,10 +62,10 @@
           <div class="slider-content">
             <img src="assets/img/coffee-slider-1.png" alt="slider image" class="slider-image">
             <div class="slider-content_about">
-              <p class="slider-content_about-title title">S’mores Frappuccino</p>
+              <h3 class="slider-content_about-title title">S’mores Frappuccino</h3>
               <p class="slider-content_about-description">This new drink takes an espresso and mixes it with brown sugar
                 and cinnamon before being topped with oat milk.</p>
-              <p class="slider-content_about-price slider-content_about-title title">$5.50</p>
+              <h3 class="slider-content_about-price slider-content_about-title title">$5.50</h3>
             </div>
           </div>
           <button class="next-button button slider-button">
@@ -73,7 +80,7 @@
           <button class="flat-button button"></button>
         </div>
       </section>
-      <section class="about-section">
+      <section class="about-section" id="about">
         <h2 class="about-section_title title section_title">Resource is <span class="accent">the perfect and cozy
             place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work
           done.</h2>
@@ -85,7 +92,7 @@
           <img src="assets/img/about-4.jpg" alt="A couple with the coffee" class="about-section_image image4">
         </div>
       </section>
-      <section class="mobile-app-section">
+      <section class="mobile-app-section" id="mobile-app">
         <div class="mobile-app-section_container">
           <h2 class="mobile-app-section_title title section_title"><span class="accent">Download</span> our app
             to&nbsp;start ordering</h2>
@@ -93,12 +100,18 @@
             your favorite coffee from wherever you are</p>
           <div class="mobile-app-section_download-buttons">
             <button class="mobile-app-section_download-button button apple">
+              <svg class="apple-icon">
+                <use href="assets/svg/sprites.svg#apple"></use>
+              </svg>
               <span class="text-wrap">
                 <span class="caption">Available on the</span>
                 <span>App Store</span>
               </span>
             </button>
             <button class="mobile-app-section_download-button button google">
+              <svg class="google-play-icon">
+                <use href="assets/svg/sprites.svg#google-play"></use>
+              </svg>
               <span class="text-wrap">
                 <span class="caption">Available on</span>
                 <span>Google Play</span>
@@ -109,7 +122,7 @@
         <img src="assets/img/mobile-screens.png" alt="Example of our mobile app" class="mobile-app-section_image">
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="contact-us">
       <div class="footer-container">
         <div class="deviz-container">
           <h2 class="deviz-container_title title section_title">Sip, Savor, Smile. <span class="accent">It's coffee
