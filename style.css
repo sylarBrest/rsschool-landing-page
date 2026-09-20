@@ -130,8 +130,20 @@ body {
   padding: 8px;
 }
 
+.sun-icon {
+  inline-size: 22px;
+  block-size: 22px;
+  fill: var(--text-inverse);
+}
+
+.moon-icon {
+  inline-size: 18px;
+  block-size: 18px;
+  fill: var(--text-primary);
+}
+
 .light {
-  background-color: var(--bg-container);
+  background-color: var(--text-accent);
 }
 
 .header_menu-button {
