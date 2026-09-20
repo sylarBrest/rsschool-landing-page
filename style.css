@@ -434,17 +434,21 @@ body {
   gap: 20px;
 }
 
-.address::before {
-  content: url('assets/svg/place.svg');
-  margin-right: 4px;
+.contact-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
-.phone::before {
-  content: url('assets/svg/phone.svg');
-  margin-right: 4px;
+.phone-icon,
+.clock-icon,
+.map-icon {
+  inline-size: 20px;
+  block-size: 20px;
+  fill: none;
+  stroke: var(--text-inverse);
 }
 
-.worktime::before {
-  content: url('assets/svg/clock.svg');
-  margin-right: 4px;
+.map-icon {
+  fill: var(--text-inverse);
 }
