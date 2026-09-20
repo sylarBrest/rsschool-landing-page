@@ -221,6 +221,14 @@ body {
   align-self: stretch;
 }
 
+.prev-button-icon,
+.next-button-icon {
+  inline-size: 14px;
+  block-size: 13px;
+  fill: none;
+  stroke: var(--text-primary);
+}
+
 .slider-buttons {
   display: flex;
   gap: 12px;
@@ -408,6 +416,15 @@ body {
   padding: 0;
   background-color: var(--bg-container);
   border: 1px solid var(--border-primary);
+}
+
+.facebook-icon,
+.instagram-icon,
+.twitter-icon {
+  inline-size: 24px;
+  block-size: 24px;
+  fill: none;
+  stroke: var(--text-inverse);
 }
 
 .contacts-list {
