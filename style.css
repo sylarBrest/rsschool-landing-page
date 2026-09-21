@@ -141,6 +141,10 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
+.theme-button .theme-icon {
+  pointer-events: none;
+}
+
 .sun-icon {
   inline-size: 22px;
   block-size: 22px;
@@ -156,7 +160,7 @@ body {
 }
 
 .theme-button:hover {
-  background-color: var(--text-primary);
+  background-color: var(--bg-container);
 }
 
 .theme-button:hover .moon-icon {
