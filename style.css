@@ -100,10 +100,6 @@ body {
   fill: var(--text-primary);
 }
 
-.header-menu {
-  margin: 0 auto;
-}
-
 @media screen and (max-width: 768px) {
   .header-menu {
     display: none;
@@ -123,6 +119,7 @@ body {
   gap: 8px;
   padding: 3px;
   border-radius: 100px;
+  margin-inline-start: auto;
   border: 1px solid var(--border-primary);
 }
 
@@ -235,7 +232,7 @@ body {
 .hero-section {
   background-image: url('assets/img/hero.jpg');
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
   color: var(--text-inverse);
   border-radius: 40px;
 }
@@ -249,7 +246,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin: 100px;
+  margin: 100px 100px 100px clamp(3.75rem, 0.893rem + 5.952vi, 6.25rem);
 }
 
 .hero-section_title {
@@ -344,6 +341,26 @@ body {
   padding: 20px 78px;
   text-decoration: none;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  transition: gap 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.hero-section_button .cup-icon {
+  max-inline-size: 0;
+  opacity: 0;
+  transition: max-inline-size 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hero-section_button:hover {
+  gap: 8px;
+  padding-inline: 64px;
+}
+
+.hero-section_button:hover .cup-icon {
+  max-inline-size: 20px;
+  opacity: 1;
 }
 
 .section_title {
