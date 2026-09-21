@@ -214,6 +214,70 @@ body {
   gap: 20px;
 }
 
+.catalogue-section_button {
+  border: 1px solid var(--border-primary);
+  border-radius: 100px;
+  padding: 8px 16px 8px 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.catalogue-section_button-image {
+  inline-size: 30px;
+  padding: 7px;
+  border-radius: 100px;
+  background-color: var(--border-primary);
+}
+
+.catalogue-section_button.active {
+  border: none;
+  background-color: var(--border-inverse);
+  color: var(--text-inverse);
+}
+
+.catalogue-section_button.active .catalogue-section_button-image {
+  background-color: var(--bg-page);
+}
+
+.catalogue-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 40px;
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+.catalogue-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  border: 1px solid var(--border-primary);
+}
+
+.catalogue-card_image {
+  inline-size: 100%;
+  border-radius: 40px;
+  object-view-box: inset(5%);
+  transition: object-view-box 0.3s ease-in-out;
+}
+
+.catalogue-card_image:hover {
+  object-view-box: inset(0%);
+}
+
+.catalogue-card_info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px;
+  block-size: 100%;
+}
+
+.catalogue-card_price {
+  margin-block-start: auto;
+}
+
 .hero-section_button {
   align-self: flex-start;
   padding: 20px 78px;
@@ -225,7 +289,9 @@ body {
 }
 
 .slider-content_about-title,
-.contacts-container_title {
+.contacts-container_title,
+.catalogue-card_title,
+.catalogue-card_price {
   line-height: 125%;
   font-size: 24px;
 }
