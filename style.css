@@ -89,6 +89,10 @@ body {
   gap: 24px;
 }
 
+.header_main-page {
+  margin-inline-end: auto;
+}
+
 .main-icon {
   display: flex;
   inline-size: 100px;
@@ -100,10 +104,18 @@ body {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .header-menu {
+    display: none;
+  }
+}
+
 .header-menu_list {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
   list-style-type: none;
+  gap: clamp(0.313rem, -2.188rem + 5.208vi, 2.5rem);
 }
 
 .header_theme-selector {
@@ -119,6 +131,7 @@ body {
   border-radius: 100px;
   background-color: var(--bg-page);
   font: inherit;
+  color: inherit;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -128,21 +141,32 @@ body {
 
 .theme-button {
   padding: 8px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .sun-icon {
   inline-size: 22px;
   block-size: 22px;
   fill: var(--text-inverse);
+  transition: fill 0.3s ease-in-out;
 }
 
 .moon-icon {
-  inline-size: 18px;
-  block-size: 18px;
+  inline-size: 22px;
+  block-size: 22px;
   fill: var(--text-primary);
+  transition: fill 0.3s ease-in-out;
 }
 
-.light {
+.theme-button:hover {
+  background-color: var(--text-primary);
+}
+
+.theme-button:hover .moon-icon {
+  fill: var(--text-inverse);
+}
+
+.theme-button.active {
   background-color: var(--text-accent);
 }
 
@@ -153,6 +177,12 @@ body {
   color: inherit;
 }
 
+@media screen and (max-width: 768px) {
+  .header_menu-button {
+    display: none;
+  }
+}
+
 .cup-icon {
   inline-size: 20px;
   block-size: 20px;
@@ -160,9 +190,39 @@ body {
   stroke: var(--text-primary);
 }
 
+.header-menu_list-item {
+  text-align: center;
+}
+
 .list-item_link {
   text-decoration: none;
   color: inherit;
+  padding-block: 10px;
+}
+
+.header_hamburger {
+  display: none;
+  inline-size: 44px;
+  block-size: 44px;
+  border: 1px solid var(--border-inverse);
+  border-radius: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .header_hamburger {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .header_hamburger-line {
+    width: 16px;
+    border: 1.5px solid var(--text-primary);
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .main {
@@ -196,6 +256,7 @@ body {
   line-height: 105%;
   font-size: 72px;
 }
+
 
 .catalogue-section_title {
   max-width: 800px;
@@ -281,6 +342,8 @@ body {
 .hero-section_button {
   align-self: flex-start;
   padding: 20px 78px;
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 .section_title {
