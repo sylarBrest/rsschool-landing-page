@@ -168,10 +168,17 @@ body {
 }
 
 .header_menu-button {
+  border-radius: 0;
   display: flex;
   gap: 10px;
   text-decoration: none;
   color: inherit;
+  border-block-end: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.header_menu-button:hover {
+  border-block-end-color: var(--text-primary);
 }
 
 @media screen and (max-width: 768px) {
@@ -189,6 +196,12 @@ body {
 
 .header-menu_list-item {
   text-align: center;
+  border-block-end: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.header-menu_list-item:hover {
+  border-block-end-color: var(--text-primary);
 }
 
 .list-item_link {
@@ -278,6 +291,13 @@ body {
   padding: 8px 16px 8px 8px;
   display: flex;
   gap: 8px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.catalogue-section_button:hover {
+  border-color: var(--bg-container);
+  background-color: var(--bg-container);
+  color: var(--text-inverse);
 }
 
 .catalogue-section_button-image {
@@ -285,11 +305,16 @@ body {
   padding: 7px;
   border-radius: 100px;
   background-color: var(--border-primary);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.catalogue-section_button:hover .catalogue-section_button-image {
+  background-color: var(--bg-page);
 }
 
 .catalogue-section_button.active {
-  border: none;
-  background-color: var(--border-inverse);
+  border-color: var(--bg-container);
+  background-color: var(--bg-container);
   color: var(--text-inverse);
 }
 
@@ -398,12 +423,12 @@ body {
   align-self: stretch;
 }
 
-.prev-button-icon,
-.next-button-icon {
+.slider-icon {
   inline-size: 14px;
   block-size: 13px;
   fill: none;
   stroke: var(--text-primary);
+  transition: stroke 0.3s ease-in-out;
 }
 
 .slider-buttons {
@@ -416,6 +441,16 @@ body {
   block-size: 60px;
   border: 1px solid var(--border-primary);
   padding: 0;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.slider-button:hover {
+  border-color: var(--bg-container);
+  background-color: var(--bg-container);
+}
+
+.slider-button:hover .slider-icon {
+  stroke: var(--text-inverse);
 }
 
 .flat-button {
@@ -545,10 +580,17 @@ body {
   border: 1px solid var(--border-primary);
   padding: 10px 20px;
   inline-size: 200px;
-  align-self: auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: start;
   gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.mobile-app-section_download-button:hover {
+  border-color: var(--bg-container);
+  background-color: var(--bg-container);
 }
 
 .text-wrap {
@@ -556,18 +598,30 @@ body {
   flex-direction: column;
   gap: 2px;
   align-items: flex-start;
+  transition: color 0.3s ease-in-out;
+}
+
+.mobile-app-section_download-button:hover .text-wrap {
+  color: var(--text-inverse);
+}
+
+.mobile-app-icon {
+  fill: var(--text-primary);
+  transition: fill 0.3s ease-in-out;
 }
 
 .apple-icon {
   inline-size: 27px;
   block-size: 32px;
-  fill: var(--text-primary);
 }
 
 .google-play-icon {
   inline-size: 31px;
   block-size: 33px;
-  fill: var(--text-primary);
+}
+
+.mobile-app-section_download-button:hover .mobile-app-icon {
+  fill: var(--text-inverse);
 }
 
 .caption {
@@ -621,15 +675,23 @@ body {
   padding: 0;
   background-color: var(--bg-container);
   border: 1px solid var(--border-primary);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.facebook-icon,
-.instagram-icon,
-.twitter-icon {
+.social-button:hover {
+  background-color: var(--border-primary);
+}
+
+.social-icon {
   inline-size: 24px;
   block-size: 24px;
   fill: none;
   stroke: var(--text-inverse);
+  transition: stroke 0.3s ease-in-out;
+}
+
+.social-button:hover .social-icon {
+  stroke: var(--text-primary);
 }
 
 .contacts-list {
@@ -639,10 +701,19 @@ body {
   gap: 20px;
 }
 
-.contact-item {
-  display: flex;
+.contact-item_link,
+.worktime {
+  display: inline-flex;
   gap: 8px;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  border-block-end: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.contact-item_link:hover {
+  border-block-end-color: var(--text-inverse);
 }
 
 .phone-icon,
