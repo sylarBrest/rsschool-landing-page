@@ -98,6 +98,12 @@ body {
 
 .header_main-page {
   margin-inline-end: auto;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header_main-page:hover {
+  background-color: var(--bg-container);
 }
 
 .main-icon {
@@ -105,6 +111,11 @@ body {
   inline-size: 100px;
   block-size: 60px;
   fill: var(--text-primary);
+  transition: fill 0.3s ease-in-out;
+}
+
+.header_main-page:hover .main-icon {
+  fill: var(--text-inverse);
 }
 
 @media screen and (max-width: 768px) {
@@ -227,6 +238,7 @@ body {
   block-size: 44px;
   border: 1px solid var(--border-inverse);
   border-radius: 100px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -237,12 +249,22 @@ body {
     justify-content: center;
     gap: 8px;
     align-items: center;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+
+  .header_hamburger:hover {
+    background-color: var(--bg-container);
+    border-color: var(--bg-container);
   }
 
   .header_hamburger-line {
     width: 16px;
     border: 1.5px solid var(--text-primary);
-    transition: all 0.5s ease-in-out;
+    transition: border-color 0.5s ease-in-out;
+  }
+
+  .header_hamburger:hover .header_hamburger-line {
+    border-color: var(--text-inverse);
   }
 }
 
@@ -395,6 +417,7 @@ body {
   flex-direction: column;
   border-radius: 40px;
   border: 1px solid var(--border-primary);
+  cursor: pointer;
 }
 
 .catalogue-card_image {
@@ -404,7 +427,7 @@ body {
   transition: object-view-box 0.3s ease-in-out;
 }
 
-.catalogue-card_image:hover {
+.catalogue-card:hover .catalogue-card_image {
   object-view-box: inset(0%);
 }
 
