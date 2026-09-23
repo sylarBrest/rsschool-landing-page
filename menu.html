@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        else document.documentElement.setAttribute('data-theme', 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/img/coffee-cup.png">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <a href="index.html" class="header_main-page">
+        <svg class="main-icon">
+          <use href="assets/svg/sprites.svg#main-icon"></use>
+        </svg>
+      </a>
+      <nav class="header-menu">
+        <ul class="header-menu_list">
+          <li class="header-menu_list-item"><a href="index.html#favorite" class="list-item_link">Favorite coffee</a>
+          </li>
+          <li class="header-menu_list-item"><a href="index.html#about" class="list-item_link">About</a></li>
+          <li class="header-menu_list-item"><a href="index.html#mobile-app" class="list-item_link">Mobile app</a></li>
+          <li class="header-menu_list-item"><a href="index.html#contact-us" class="list-item_link">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header_theme-selector">
+        <button class="theme-button button light active">
+          <svg class="theme-icon sun-icon">
+            <use href="assets/svg/sprites.svg#sun-icon"></use>
+          </svg>
+        </button>
+        <button class="theme-button button dark">
+          <svg class="theme-icon moon-icon">
+            <use href="assets/svg/sprites.svg#moon-icon"></use>
+          </svg>
+        </button>
+      </div>
+      <a href="menu.html" class="header_menu-button">
+        <span>Menu</span>
+        <svg class="cup-icon" aria-hidden="true">
+          <use href="assets/svg/sprites.svg#cup-icon"></use>
+        </svg>
+      </a>
+      <div class="header_hamburger">
+        <span class="header_hamburger-line"></span>
+        <span class="header_hamburger-line"></span>
+      </div>
+    </header>
+    <main class="main">
+      <section class="catalogue-section">
+        <h1 class="catalogue-section_title section_title title">Behind each of our cups hides an <span
+            class="accent">amazing surprise</span>
+        </h1>
+        <div class="catalogue-section_buttons">
+          <button class="catalogue-section_button button active">
+            <img src="assets/img/coffee-cup.png" alt="" class="catalogue-section_button-image">
+            <span>Coffee</span>
+          </button>
+          <button class="catalogue-section_button button">
+            <img src="assets/img/teapot.png" alt="" class="catalogue-section_button-image">
+            <span>Tea</span>
+          </button>
+          <button class="catalogue-section_button button">
+            <img src="assets/img/cake-slice.png" alt="" class="catalogue-section_button-image">
+            <span>Dessert</span>
+          </button>
+        </div>
+        <div class="catalogue-cards">
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-1.jpg" alt="Irish coffee" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h2 class="catalogue-card_title title">Irish coffee</h2>
+              <p class="catalogue-card_description">Fragrant black coffee with Jameson Irish whiskey and whipped milk
+              </p>
+              <h3 class="catalogue-card_price title">$7.00</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-2.jpg" alt="Kahlua coffee" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Kahlua coffee</h3>
+              <p class="catalogue-card_description">Classic coffee with milk and Kahlua liqueur under a cap of frothed
+                milk</p>
+              <h3 class="catalogue-card_price">$7.00</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-3.jpg" alt="Honey raf" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Honey raf</h3>
+              <p class="catalogue-card_description">Espresso with frothed milk, cream and aromatic honey</p>
+              <h3 class="catalogue-card_price">$5.50</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-4.jpg" alt="Ice cappuccino" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Ice cappuccino</h3>
+              <p class="catalogue-card_description">Cappuccino with soft thick foam in summer version with ice</p>
+              <h3 class="catalogue-card_price">$5.00</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-5.jpg" alt="Espresso" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Espresso</h3>
+              <p class="catalogue-card_description">Classic black coffee</p>
+              <h3 class="catalogue-card_price">$4.50</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-6.jpg" alt="Latte" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Latte</h3>
+              <p class="catalogue-card_description">Espresso coffee with the addition of steamed milk and dense milk
+                foam
+              </p>
+              <h3 class="catalogue-card_price">$5.50</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-7.jpg" alt="Latte macchiato" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title">Latte macchiato</h3>
+              <p class="catalogue-card_description">Espresso with frothed milk and chocolate</p>
+              <h3 class="catalogue-card_price">$5.50</h3>
+            </div>
+          </div>
+          <div class="catalogue-card">
+            <img src="assets/img/coffee-8.jpg" alt="Coffee with cognac" class="catalogue-card_image">
+            <div class="catalogue-card_info">
+              <h3 class="catalogue-card_title title">Coffee with cognac</h3>
+              <p class="catalogue-card_description">Fragrant black coffee with cognac and whipped cream</p>
+              <h3 class="catalogue-card_price title">$6.50</h3>
+            </div>
+          </div>
+        </div>
+        <button class="more-button button slider-button">
+          <svg class="slider-icon more-button-icon">
+            <use href="assets/svg/sprites.svg#more-button-icon"></use>
+          </svg>
+        </button>
+      </section>
+    </main>
+    <footer class="footer" id="contact-us">
+      <div class="footer-container">
+        <div class="motto-container">
+          <h2 class="motto-container_title title section_title">Sip, Savor, Smile. <span class="accent">It's&nbsp;coffee
+              time!</span></h2>
+          <div class="social-buttons">
+            <a href="https://x.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon twitter-icon">
+                <use href="assets/svg/sprites.svg#twitter-icon"></use>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon instagram-icon">
+                <use href="assets/svg/sprites.svg#instagram-icon"></use>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon facebook-icon">
+                <use href="assets/svg/sprites.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="contacts-container">
+          <h3 class="contacts-container_title title">Contact us</h3>
+          <ul class="contacts-list">
+            <li class="contact-item map">
+              <a href="https://maps.app.goo.gl/gYYZoxvgKLScQP7v8" target="_blank" rel="external"
+                class="contact-item_link">
+                <svg class="map-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#map-icon"></use>
+                </svg>
+                <span>8558 Green Rd., LA</span>
+              </a>
+            </li>
+            <li class="contact-item phone">
+              <a href="tel:+16035550123" class="contact-item_link">
+                <svg class="phone-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#phone-icon"></use>
+                </svg>
+                <span>+1 (603) 555-0123</span>
+              </a>
+            </li>
+            <li class="contact-item worktime">
+              <svg class="clock-icon" aria-hidden="true">
+                <use href="assets/svg/sprites.svg#clock-icon"></use>
+              </svg>
+              <span>Mon-Sat: 9:00-23:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House</title>
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        else document.documentElement.setAttribute('data-theme', 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/img/coffee-cup.png">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <a href="index.html" class="header_main-page">
+        <svg class="main-icon">
+          <use href="assets/svg/sprites.svg#main-icon"></use>
+        </svg>
+      </a>
+      <nav class="header-menu">
+        <ul class="header-menu_list">
+          <li class="header-menu_list-item"><a href="index.html#favorite" class="list-item_link">Favorite coffee</a>
+          </li>
+          <li class="header-menu_list-item"><a href="index.html#about" class="list-item_link">About</a></li>
+          <li class="header-menu_list-item"><a href="index.html#mobile-app" class="list-item_link">Mobile app</a></li>
+          <li class="header-menu_list-item"><a href="index.html#contact-us" class="list-item_link">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header_theme-selector">
+        <button class="theme-button button light">
+          <svg class="theme-icon sun-icon">
+            <use href="assets/svg/sprites.svg#sun-icon"></use>
+          </svg>
+        </button>
+        <button class="theme-button button dark">
+          <svg class="theme-icon moon-icon">
+            <use href="assets/svg/sprites.svg#moon-icon"></use>
+          </svg>
+        </button>
+      </div>
+      <a href="menu.html" class="header_menu-button button">
+        <span>Menu</span>
+        <svg class="cup-icon" aria-hidden="true">
+          <use href="assets/svg/sprites.svg#cup-icon"></use>
+        </svg>
+      </a>
+      <div class="header_hamburger">
+        <span class="header_hamburger-line"></span>
+        <span class="header_hamburger-line"></span>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero-section">
+        <div class="hero-section_container">
+          <h1 class="hero-section_title title"><span class="accent">Enjoy</span> premium coffee at our charming cafe
+          </h1>
+          <p class="hero-section_about">With its inviting atmosphere and delicious coffee options, the Coffee House
+            Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy
+            their favorite beverage.</p>
+          <a href="menu.html" class="hero-section_button button">
+            <span>Menu</span>
+            <svg class="cup-icon" aria-hidden="true">
+              <use href="assets/svg/sprites.svg#cup-icon"></use>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <section class="slider-section" id="favorite">
+        <h2 class="slider-section_title title section_title">Choose your <span class="accent">favorite</span> coffee
+        </h2>
+        <div class="slider-container">
+          <button class="prev-button button slider-button">
+            <svg class="slider-icon prev-button-icon">
+              <use href="assets/svg/sprites.svg#prev-button-icon"></use>
+            </svg>
+          </button>
+          <div class="slider-content">
+            <img src="assets/img/coffee-slider-1.png" alt="S’mores Frappuccino" class="slider-image">
+            <div class="slider-content_about">
+              <h3 class="slider-content_about-title title">S’mores Frappuccino</h3>
+              <p class="slider-content_about-description">This new drink takes an espresso and mixes it with brown sugar
+                and cinnamon before being topped with oat milk.</p>
+              <h3 class="slider-content_about-price slider-content_about-title title">$5.50</h3>
+            </div>
+          </div>
+          <button class="next-button button slider-button">
+            <svg class="slider-icon next-button-icon">
+              <use href="assets/svg/sprites.svg#next-button-icon"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="slider-buttons">
+          <button class="flat-button button active"></button>
+          <button class="flat-button button"></button>
+          <button class="flat-button button"></button>
+        </div>
+      </section>
+      <section class="about-section" id="about">
+        <h2 class="about-section_title title section_title">Resource is <span class="accent">the perfect and cozy
+            place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work
+          done.</h2>
+        <div class="about-section_images">
+          <img src="assets/img/about-1.jpg" alt="A girl with a cup of coffee" class="about-section_image image1">
+          <img src="assets/img/about-2.jpg" alt="A cup of coffee with the lights" class="about-section_image image2">
+          <img src="assets/img/about-3.jpg" alt="A man with the cup of coffee working"
+            class="about-section_image image3">
+          <img src="assets/img/about-4.jpg" alt="A couple with the coffee" class="about-section_image image4">
+        </div>
+      </section>
+      <section class="mobile-app-section" id="mobile-app">
+        <div class="mobile-app-section_container">
+          <h2 class="mobile-app-section_title title section_title"><span class="accent">Download</span> our app
+            to&nbsp;start ordering</h2>
+          <p class="mobile-app-section_about">Download the Resource app today and experience the comfort of ordering
+            your favorite coffee from wherever you are</p>
+          <div class="mobile-app-section_download-buttons">
+            <a href="https://apps.apple.com/ru/iphone/apps?l=en-GB" target="_blank" rel="external"
+              class="mobile-app-section_download-button button apple">
+              <svg class="mobile-app-icon apple-icon" aria-hidden="true">
+                <use href="assets/svg/sprites.svg#apple-icon"></use>
+              </svg>
+              <span class="text-wrap">
+                <span class="caption">Available on the</span>
+                <span>App Store</span>
+              </span>
+            </a>
+            <a href="https://play.google.com/store/apps" target="_blank" rel="external"
+              class="mobile-app-section_download-button button google">
+              <svg class="mobile-app-icon google-play-icon" aria-hidden="true">
+                <use href="assets/svg/sprites.svg#google-play-icon"></use>
+              </svg>
+              <span class="text-wrap">
+                <span class="caption">Available on</span>
+                <span>Google Play</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <img src="assets/img/mobile-screens.png" alt="Example of our mobile app" class="mobile-app-section_image">
+      </section>
+    </main>
+    <footer class="footer" id="contact-us">
+      <div class="footer-container">
+        <div class="motto-container">
+          <h2 class="motto-container_title title section_title">Sip, Savor, Smile. <span class="accent">It's&nbsp;coffee
+              time!</span></h2>
+          <div class="social-buttons">
+            <a href="https://x.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon twitter-icon">
+                <use href="assets/svg/sprites.svg#twitter-icon"></use>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon instagram-icon">
+                <use href="assets/svg/sprites.svg#instagram-icon"></use>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon facebook-icon">
+                <use href="assets/svg/sprites.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="contacts-container">
+          <h3 class="contacts-container_title title">Contact us</h3>
+          <ul class="contacts-list">
+            <li class="contact-item map">
+              <a href="https://maps.app.goo.gl/gYYZoxvgKLScQP7v8" target="_blank" rel="external"
+                class="contact-item_link">
+                <svg class="map-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#map-icon"></use>
+                </svg>
+                <span>8558 Green Rd., LA</span>
+              </a>
+            </li>
+            <li class="contact-item phone">
+              <a href="tel:+16035550123" class="contact-item_link">
+                <svg class="phone-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#phone-icon"></use>
+                </svg>
+                <span>+1 (603) 555-0123</span>
+              </a>
+            </li>
+            <li class="contact-item worktime">
+              <svg class="clock-icon" aria-hidden="true">
+                <use href="assets/svg/sprites.svg#clock-icon"></use>
+              </svg>
+              <span>Mon-Sat: 9:00-23:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
