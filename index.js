@@ -6,6 +6,24 @@ const body = document.querySelector('body');
 const headerMenu = document.querySelector('.header-menu');
 const headerMenuWrapper = document.querySelector('.header-menu_wrapper');
 const headerHamburger = document.querySelector('.header_hamburger');
+const slides = document.querySelectorAll('.slider-slide');
+const flatButtons = document.querySelectorAll('.flat-button');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let currentSlide = 0;
+const totalSlides = slides.length;
+
+const showSlide = (index) => {
+  currentSlide = (index + totalSlides) % totalSlides;
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentSlide);
+    slide.setAttribute('aria-hidden', i !== currentSlide);
+  });
+  flatButtons.forEach((flatButton, i) =>
+    flatButton.classList.toggle('active', i === currentSlide),
+  );
+};
 
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
@@ -55,6 +73,12 @@ document.addEventListener('keydown', (event) => {
   ) {
     closeMenu();
   }
+  if (event.key === 'ArrowLeft') {
+    showSlide(currentSlide - 1);
+  }
+  if (event.key === 'ArrowRight') {
+    showSlide(currentSlide + 1);
+  }
 });
 
 window.matchMedia('(min-width: 769px').addEventListener('change', (event) => {
@@ -62,5 +86,11 @@ window.matchMedia('(min-width: 769px').addEventListener('change', (event) => {
     closeMenu();
   }
 });
+
+prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+flatButtons.forEach((flatButton, i) =>
+  flatButton.addEventListener('click', () => showSlide(i)),
+);
 
 initTheme();
