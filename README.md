@@ -1,4 +1,4 @@
-# Landing Page. Part 1
+# Landing Page. Part 2
 
 ## Coffee House
 
