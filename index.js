@@ -2,6 +2,10 @@ const root = document.documentElement;
 const KEY = 'theme';
 const startTheme = 'light';
 const themeButtons = document.querySelectorAll('.theme-button');
+const body = document.querySelector('body');
+const headerMenu = document.querySelector('.header-menu');
+const headerMenuWrapper = document.querySelector('.header-menu_wrapper');
+const headerHamburger = document.querySelector('.header_hamburger');
 
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
@@ -26,8 +30,37 @@ const applyTheme = (event) => {
   setTheme(theme);
 };
 
+const toggleMenu = () => {
+  headerHamburger.classList.toggle('is-open');
+  headerMenuWrapper.classList.toggle('is-open');
+  body.classList.toggle('is-open');
+};
+
+const closeMenu = () => {
+  headerHamburger.classList.remove('is-open');
+  headerMenuWrapper.classList.remove('is-open');
+  body.classList.remove('is-open');
+};
+
 themeButtons.forEach((themeButton) =>
   themeButton.addEventListener('click', applyTheme),
 );
+
+headerHamburger.addEventListener('click', toggleMenu);
+headerMenu.addEventListener('click', closeMenu);
+document.addEventListener('keydown', (event) => {
+  if (
+    event.key === 'Escape' &&
+    headerMenuWrapper.classList.contains('is-open')
+  ) {
+    closeMenu();
+  }
+});
+
+window.matchMedia('(min-width: 769px').addEventListener('change', (event) => {
+  if (event.matches) {
+    closeMenu();
+  }
+});
 
 initTheme();

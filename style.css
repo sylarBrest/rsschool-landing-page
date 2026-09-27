@@ -82,6 +82,7 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 20px 40px;
@@ -118,10 +119,8 @@ body {
   fill: var(--text-inverse);
 }
 
-@media screen and (max-width: 768px) {
-  .header-menu {
-    display: none;
-  }
+.header-menu_wrapper {
+  display: contents;
 }
 
 .header-menu_list {
@@ -190,6 +189,7 @@ body {
 }
 
 .header_menu-button {
+  order: 4;
   border-radius: 0;
   display: flex;
   gap: 10px;
@@ -203,17 +203,49 @@ body {
   border-block-end-color: var(--text-primary);
 }
 
-@media screen and (max-width: 768px) {
-  .header_menu-button {
-    display: none;
-  }
-}
-
 .cup-icon {
   inline-size: 20px;
   block-size: 20px;
   fill: none;
   stroke: var(--text-primary);
+}
+
+@media screen and (max-width: 768px) {
+  body.is-open {
+    overflow-y: hidden;
+  }
+
+  .header-menu_wrapper {
+    padding-inline: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 100% 0 0 0;
+    height: calc(100dvh - 100%);
+    z-index: 10;
+    background-color: var(--bg-page);
+    font-size: 32px;
+    line-height: 125%;
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .header-menu_wrapper.is-open {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .header-menu_list {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .cup-icon {
+    inline-size: 40px;
+    block-size: 40px;
+  }
 }
 
 .header-menu_list-item {
@@ -260,11 +292,19 @@ body {
   .header_hamburger-line {
     width: 16px;
     border: 1.5px solid var(--text-primary);
-    transition: border-color 0.5s ease-in-out;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .header_hamburger:hover .header_hamburger-line {
     border-color: var(--text-inverse);
+  }
+
+  .header_hamburger.is-open .header_hamburger-line:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .header_hamburger.is-open .header_hamburger-line:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
   }
 }
 
