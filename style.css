@@ -436,10 +436,6 @@ body {
   .catalogue-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .catalogue-cards> :nth-child(n + 5) {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 512px) {
@@ -586,16 +582,6 @@ body {
 
   .slider-container {
     justify-content: center;
-  }
-}
-
-.more-button {
-  display: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .more-button {
-    display: block;
   }
 }
 
