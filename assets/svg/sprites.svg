@@ -76,7 +76,7 @@
     <path d="M0.5 6.5H13M7 12.5L13 6.5L7 0.5" stroke-linecap="round" stroke-linejoin="round" />
   </symbol>
 
-  <symbol id="more-button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="more-button-icon" viewBox="0 0 24 24">
     <path
       d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8"
       stroke-linecap="round" stroke-linejoin="round" />
@@ -144,5 +144,13 @@
     <path
       d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6023 18.3337 9.99996C18.3337 5.39759 14.6027 1.66663 10.0003 1.66663C5.39795 1.66663 1.66699 5.39759 1.66699 9.99996C1.66699 14.6023 5.39795 18.3333 10.0003 18.3333Z"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+
+  <symbol id="alert-icon" viewBox="0 0 16 16">
+    <path d="M8 7.66663V11" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8 5.00667L8.00667 4.99926" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8.00004C14.6668 4.31814 11.6821 1.33337 8.00016 1.33337C4.31826 1.33337 1.3335 4.31814 1.3335 8.00004C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667Z"
+      stroke-linecap="round" stroke-linejoin="round" />
   </symbol>
 </svg>

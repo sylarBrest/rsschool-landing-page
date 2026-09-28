@@ -82,6 +82,64 @@
           </button>
         </div>
         <div class="catalogue-cards"></div>
+        <dialog class="modal" id="product-modal">
+          <div class="modal-container">
+            <img class="modal-image" src="" alt="">
+            <div class="modal-info">
+              <div class="modal-info_title-container">
+                <p class="modal-title title"></p>
+                <p class="modal-description"></p>
+              </div>
+              <div class="modal-info_size-container">
+                <p class="size-title">Size</p>
+                <div class="modal-buttons size-buttons">
+                  <button class="modal-button button size-choice">
+                    <span class="modal-button_icon">S</span>
+                    <span class="modal-button_text size-text-s"></span>
+                  </button>
+                  <button class="modal-button button size-choice">
+                    <span class="modal-button_icon">M</span>
+                    <span class="modal-button_text size-text-m"></span>
+                  </button>
+                  <button class="modal-button button size-choice">
+                    <span class="modal-button_icon">L</span>
+                    <span class="modal-button_text size-text-l"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal-info_additives-container">
+                <p class="additives-title">Additives</p>
+                <div class="modal-buttons additive-buttons">
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">1</span>
+                    <span class="modal-button_text additives-text"></span>
+                  </button>
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">2</span>
+                    <span class="modal-button_text additives-text"></span>
+                  </button>
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">3</span>
+                    <span class="modal-button_text additives-text"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal-info_price-container">
+                <span class="price-total_title title">Total:</span>
+                <span class="price-total_price title">$</span>
+              </div>
+              <div class="modal-info_alert-container">
+                <svg class="alert-icon">
+                  <use href="assets/svg/sprites.svg#alert-icon"></use>
+                </svg>
+                <p class="alert-text">The cost is not final. Download our mobile app to see the final price and place
+                  your
+                  order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+              </div>
+              <button class="modal-info_close-button button">Close</button>
+            </div>
+          </div>
+        </dialog>
         <button class="more-button button slider-button">
           <svg class="slider-icon more-button-icon">
             <use href="assets/svg/sprites.svg#more-button-icon"></use>

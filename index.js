@@ -25,6 +25,18 @@ let startVisibleCategoryCount = 0;
 let endVisibleCategoryCount = 0;
 let currentCategory = 'coffee';
 
+const modal = document.getElementById('product-modal');
+const modalContainer = modal?.querySelector('.modal-container');
+const modalImage = modal?.querySelector('.modal-image');
+const modalTitle = modal?.querySelector('.modal-title');
+const modalDescription = modal?.querySelector('.modal-description');
+const sizeTextSpanS = modal?.querySelector('.size-text-s');
+const sizeTextSpanM = modal?.querySelector('.size-text-m');
+const sizeTextSpanL = modal?.querySelector('.size-text-l');
+const additivesTextSpans = modal?.querySelectorAll('.additives-text');
+const modalPrice = modal?.querySelector('.price-total_price');
+const modalCloseButton = modal?.querySelector('.modal-info_close-button');
+
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
   themeButtons.forEach((themeButton) =>
@@ -82,7 +94,7 @@ const fillCardTemplateHTML = (card) => {
         <div class="catalogue-card_info">
           <h3 class="catalogue-card_title title">${card.name}</h3>
           <p class="catalogue-card_description">${card.description}</p>
-          <p class="catalogue-card_price title">${card.price}</p>
+          <p class="catalogue-card_price title">$${card.price}</p>
         </div>
       </article>
     `;
@@ -92,12 +104,10 @@ const renderCards = () => {
   const allCategoryCards = productsData.filter(
     (product) => product.category === currentCategory,
   );
-  console.log(allCategoryCards);
   const countShownCards = Math.min(
     endVisibleCategoryCount,
     allCategoryCards.length,
   );
-  console.log(endVisibleCategoryCount);
   const currentCategoryCards = allCategoryCards.slice(
     startVisibleCategoryCount,
     countShownCards,
@@ -109,7 +119,6 @@ const renderCards = () => {
   }
 
   startVisibleCategoryCount = countShownCards;
-  console.log(countShownCards >= allCategoryCards.length);
   moreButton.style.display =
     countShownCards >= allCategoryCards.length ? 'none' : 'block';
 };
@@ -126,6 +135,32 @@ const setActiveCategoryButton = (activeButton) => {
   categoryButtons.forEach((categoryButton) =>
     categoryButton.classList.toggle('active', categoryButton === activeButton),
   );
+};
+
+const findCardById = (id) => {
+  return productsData.find((product) => product.id === Number(id));
+};
+
+const openModal = (card) => {
+  console.log(card);
+  modalImage.src = card.image;
+  modalImage.alt = card.name;
+  modalTitle.textContent = card.name;
+  modalDescription.textContent = card.description;
+  modalPrice.textContent = `$${card.price}`;
+  sizeTextSpanS.textContent = card.sizes.s.size;
+  sizeTextSpanM.textContent = card.sizes.m.size;
+  sizeTextSpanL.textContent = card.sizes.l.size;
+  additivesTextSpans.forEach(
+    (additivesTextSpan, i) =>
+      (additivesTextSpan.textContent = card.additives[i].name),
+  );
+  modal.showModal();
+};
+
+const getCard = (event) => {
+  const card = event.target.closest('.catalogue-card');
+  openModal(findCardById(card.dataset.id));
 };
 
 themeButtons.forEach((themeButton) =>
@@ -172,5 +207,15 @@ moreButton?.addEventListener('click', () => {
   renderCards();
 });
 
-resetCatalogueCards(currentCategory);
+catalogueCards?.addEventListener('click', getCard);
+modalCloseButton?.addEventListener('click', () => {
+  modal.close();
+});
+modal?.addEventListener('click', (event) => {
+  if (!modalContainer.contains(event.target)) {
+    modal.close();
+  }
+});
+
+if (catalogueCards) resetCatalogueCards(currentCategory);
 initTheme();
