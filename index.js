@@ -84,7 +84,7 @@ const showSlide = (index) => {
 };
 
 const getMaxVisibleCount = () => {
-  return window.matchMedia('(min-width: 769px)').matches ? 8 : 4;
+  return window.matchMedia('(min-width: 1025px)').matches ? 8 : 4;
 };
 
 const fillCardTemplateHTML = (card) => {
@@ -215,6 +215,10 @@ window.matchMedia('(min-width: 769px').addEventListener('change', (event) => {
   if (event.matches) {
     closeMenu();
   }
+});
+
+window.matchMedia('(min-width: 513px').addEventListener('change', () => {
+  resetCatalogueCards(currentCategory);
 });
 
 prevButton?.addEventListener('click', () => showSlide(currentSlide - 1));
