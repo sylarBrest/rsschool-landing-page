@@ -396,7 +396,7 @@ body:has(dialog:open) {
 .modal-button {
   border: 1px solid var(--border-primary);
   border-radius: 100px;
-  padding: 8px 16px 8px 8px;
+  padding: 8px 15px 8px 7px;
   display: flex;
   gap: 8px;
   color: var(--text-primary);
@@ -501,7 +501,7 @@ body:has(dialog:open) {
 .modal {
   margin: auto;
   border: none;
-  inline-size: 800px;
+  inline-size: clamp(43rem, 35rem + 16.667vi, 50rem);
   border-radius: 40px;
   background-color: var(--bg-page);
   color: inherit;
@@ -539,6 +539,19 @@ body:has(dialog:open) {
   border-radius: 40px;
 }
 
+@media screen and (max-width: 768px) {
+  .modal-image {
+    block-size: clamp(13.125rem, -11.005rem + 63.291vi, 19.375rem);
+    inline-size: clamp(13.125rem, -11.005rem + 63.291vi, 19.375rem);
+  }
+}
+
+@media screen and (max-width: 609px) {
+  .modal-image {
+    display: none;
+  }
+}
+
 .modal-info {
   display: flex;
   flex-direction: column;
@@ -561,6 +574,7 @@ body:has(dialog:open) {
 .modal-buttons {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .modal-info_price-container {
