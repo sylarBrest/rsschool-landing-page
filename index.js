@@ -30,12 +30,12 @@ const modalContainer = modal?.querySelector('.modal-container');
 const modalImage = modal?.querySelector('.modal-image');
 const modalTitle = modal?.querySelector('.modal-title');
 const modalDescription = modal?.querySelector('.modal-description');
-const sizeTextSpanS = modal?.querySelector('.size-text-s');
-const sizeTextSpanM = modal?.querySelector('.size-text-m');
-const sizeTextSpanL = modal?.querySelector('.size-text-l');
-const additivesTextSpans = modal?.querySelectorAll('.additives-text');
+const sizeButtons = modal?.querySelectorAll('.size-choice');
+const additivesButtons = modal?.querySelectorAll('.additives-choice');
 const modalPrice = modal?.querySelector('.price-total_price');
 const modalCloseButton = modal?.querySelector('.modal-info_close-button');
+
+let basePrice = 0;
 
 const setTheme = (theme) => {
   root.setAttribute('data-theme', theme);
@@ -137,24 +137,51 @@ const setActiveCategoryButton = (activeButton) => {
   );
 };
 
+const formatPrice = (price) => `$${Number(price).toFixed(2)}`;
+
 const findCardById = (id) => {
   return productsData.find((product) => product.id === Number(id));
 };
 
+const updateTotalPrice = () => {
+  let totalPrice = basePrice;
+  const activeSizeButton = modal.querySelector('.size-choice.active');
+  const activeAdditivesButtons = modal.querySelectorAll(
+    '.additives-choice.active',
+  );
+
+  if (activeSizeButton) {
+    totalPrice += Number(activeSizeButton.dataset.price);
+  }
+  activeAdditivesButtons?.forEach((activeAdditivesButton) => {
+    totalPrice += Number(activeAdditivesButton.dataset.price);
+  });
+
+  modalPrice.textContent = formatPrice(totalPrice);
+};
+
 const openModal = (card) => {
-  console.log(card);
+  basePrice = Number(card.price);
   modalImage.src = card.image;
   modalImage.alt = card.name;
   modalTitle.textContent = card.name;
   modalDescription.textContent = card.description;
-  modalPrice.textContent = `$${card.price}`;
-  sizeTextSpanS.textContent = card.sizes.s.size;
-  sizeTextSpanM.textContent = card.sizes.m.size;
-  sizeTextSpanL.textContent = card.sizes.l.size;
-  additivesTextSpans.forEach(
-    (additivesTextSpan, i) =>
-      (additivesTextSpan.textContent = card.additives[i].name),
-  );
+  sizeButtons.forEach((sizeButton) => {
+    const key = sizeButton.dataset.size;
+    const size = card.sizes[key];
+    sizeButton.querySelector('.modal-button_text').textContent = size.size;
+    sizeButton.dataset.price = Number(size['add-price']);
+    sizeButton.classList.toggle('active', key === 's');
+  });
+  additivesButtons.forEach((additivesButton, index) => {
+    const additive = card.additives[index];
+    additivesButton.querySelector('.modal-button_text').textContent =
+      additive.name;
+    additivesButton.dataset.price = Number(additive['add-price']);
+    additivesButton.classList.remove('active');
+  });
+
+  updateTotalPrice();
   modal.showModal();
 };
 
@@ -215,6 +242,19 @@ modal?.addEventListener('click', (event) => {
   if (!modalContainer.contains(event.target)) {
     modal.close();
   }
+});
+sizeButtons?.forEach((sizeButton) => {
+  sizeButton.addEventListener('click', () => {
+    sizeButtons.forEach((button) => button.classList.remove('active'));
+    sizeButton.classList.add('active');
+    updateTotalPrice();
+  });
+});
+additivesButtons?.forEach((additivesButton) => {
+  additivesButton.addEventListener('click', () => {
+    additivesButton.classList.toggle('active');
+    updateTotalPrice();
+  });
 });
 
 if (catalogueCards) resetCatalogueCards(currentCategory);

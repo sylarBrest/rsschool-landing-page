@@ -504,7 +504,6 @@ body:has(dialog:open) {
   inline-size: 800px;
   border-radius: 40px;
   background-color: var(--bg-page);
-  padding: 16px;
   color: inherit;
   opacity: 0;
   transform: translateY(700px);
@@ -527,6 +526,7 @@ body:has(dialog:open) {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  padding: 16px;
 }
 
 .modal::backdrop {
