@@ -230,7 +230,7 @@ body:has(dialog:open) {
     align-items: center;
     position: absolute;
     inset: 100% 0 0 0;
-    height: 100dvh;
+    block-size: 100dvh;
     z-index: 10;
     background-color: var(--bg-page);
     font-size: 32px;
@@ -296,7 +296,7 @@ body:has(dialog:open) {
   }
 
   .header_hamburger-line {
-    width: 16px;
+    inline-size: 16px;
     border: 1.5px solid var(--text-primary);
     transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
@@ -370,7 +370,7 @@ body:has(dialog:open) {
 }
 
 .catalogue-section_title {
-  max-width: 800px;
+  max-inline-size: 800px;
   text-align: center;
 }
 
