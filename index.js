@@ -217,6 +217,9 @@ window.matchMedia('(min-width: 769px').addEventListener('change', (event) => {
   }
 });
 
+window.matchMedia('(min-width: 1025px').addEventListener('change', () => {
+  resetCatalogueCards(currentCategory);
+});
 window.matchMedia('(min-width: 513px').addEventListener('change', () => {
   resetCatalogueCards(currentCategory);
 });
