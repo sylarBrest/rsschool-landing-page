@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        else document.documentElement.setAttribute('data-theme', 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/img/coffee-cup.png">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <a href="index.html" class="header_main-page">
+        <svg class="main-icon">
+          <use href="assets/svg/sprites.svg#main-icon"></use>
+        </svg>
+      </a>
+      <div class="header-menu_wrapper">
+        <nav class="header-menu">
+          <ul class="header-menu_list">
+            <li class="header-menu_list-item"><a href="index.html#favorite" class="list-item_link">Favorite coffee</a>
+            </li>
+            <li class="header-menu_list-item"><a href="index.html#about" class="list-item_link">About</a></li>
+            <li class="header-menu_list-item"><a href="index.html#mobile-app" class="list-item_link">Mobile app</a></li>
+            <li class="header-menu_list-item"><a href="index.html#contact-us" class="list-item_link">Contact us</a></li>
+          </ul>
+        </nav>
+        <a href="menu.html" class="header_menu-button button">
+          <span>Menu</span>
+          <svg class="cup-icon" aria-hidden="true">
+            <use href="assets/svg/sprites.svg#cup-icon"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="header_theme-selector">
+        <button class="theme-button button light active">
+          <svg class="theme-icon sun-icon">
+            <use href="assets/svg/sprites.svg#sun-icon"></use>
+          </svg>
+        </button>
+        <button class="theme-button button dark">
+          <svg class="theme-icon moon-icon">
+            <use href="assets/svg/sprites.svg#moon-icon"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="header_hamburger">
+        <span class="header_hamburger-line"></span>
+        <span class="header_hamburger-line"></span>
+      </div>
+    </header>
+    <main class="main">
+      <section class="catalogue-section">
+        <h1 class="catalogue-section_title section_title title">Behind each of our cups hides an <span
+            class="accent">amazing surprise</span>
+        </h1>
+        <div class="catalogue-section_buttons">
+          <button class="catalogue-section_button button active" data-category="coffee">
+            <img src="assets/img/coffee-cup.png" alt="" class="catalogue-section_button-image">
+            <span>Coffee</span>
+          </button>
+          <button class="catalogue-section_button button" data-category="tea">
+            <img src="assets/img/teapot.png" alt="" class="catalogue-section_button-image">
+            <span>Tea</span>
+          </button>
+          <button class="catalogue-section_button button" data-category="dessert">
+            <img src="assets/img/cake-slice.png" alt="" class="catalogue-section_button-image">
+            <span>Dessert</span>
+          </button>
+        </div>
+        <div class="catalogue-cards"></div>
+        <dialog class="modal" id="product-modal">
+          <div class="modal-container">
+            <img class="modal-image" src="" alt="">
+            <div class="modal-info">
+              <div class="modal-info_title-container">
+                <p class="modal-title title"></p>
+                <p class="modal-description"></p>
+              </div>
+              <div class="modal-info_size-container">
+                <p class="size-title">Size</p>
+                <div class="modal-buttons size-buttons">
+                  <button class="modal-button button size-choice active" data-size="s">
+                    <span class="modal-button_icon">S</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                  <button class="modal-button button size-choice" data-size="m">
+                    <span class="modal-button_icon">M</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                  <button class="modal-button button size-choice" data-size="l">
+                    <span class="modal-button_icon">L</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal-info_additives-container">
+                <p class="additives-title">Additives</p>
+                <div class="modal-buttons additive-buttons">
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">1</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">2</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                  <button class="modal-button button additives-choice">
+                    <span class="modal-button_icon">3</span>
+                    <span class="modal-button_text"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal-info_price-container">
+                <span class="price-total_title title">Total:</span>
+                <span class="price-total_price title">$</span>
+              </div>
+              <div class="modal-info_alert-container">
+                <svg class="alert-icon">
+                  <use href="assets/svg/sprites.svg#alert-icon"></use>
+                </svg>
+                <p class="alert-text">The cost is not final. Download our mobile app to see the final price and place
+                  your
+                  order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+              </div>
+              <button class="modal-info_close-button button">Close</button>
+            </div>
+          </div>
+        </dialog>
+        <button class="more-button button slider-button">
+          <svg class="slider-icon more-button-icon">
+            <use href="assets/svg/sprites.svg#more-button-icon"></use>
+          </svg>
+        </button>
+      </section>
+    </main>
+    <footer class="footer" id="contact-us">
+      <div class="footer-container">
+        <div class="motto-container">
+          <h2 class="motto-container_title title section_title">Sip, Savor, Smile. <span class="accent">It's&nbsp;coffee
+              time!</span></h2>
+          <div class="social-buttons">
+            <a href="https://x.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon twitter-icon">
+                <use href="assets/svg/sprites.svg#twitter-icon"></use>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon instagram-icon">
+                <use href="assets/svg/sprites.svg#instagram-icon"></use>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="external" class="button social-button">
+              <svg class="social-icon facebook-icon">
+                <use href="assets/svg/sprites.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="contacts-container">
+          <h3 class="contacts-container_title title">Contact us</h3>
+          <ul class="contacts-list">
+            <li class="contact-item map">
+              <a href="https://maps.app.goo.gl/gYYZoxvgKLScQP7v8" target="_blank" rel="external"
+                class="contact-item_link">
+                <svg class="map-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#map-icon"></use>
+                </svg>
+                <span>8558 Green Rd., LA</span>
+              </a>
+            </li>
+            <li class="contact-item phone">
+              <a href="tel:+16035550123" class="contact-item_link">
+                <svg class="phone-icon" aria-hidden="true">
+                  <use href="assets/svg/sprites.svg#phone-icon"></use>
+                </svg>
+                <span>+1 (603) 555-0123</span>
+              </a>
+            </li>
+            <li class="contact-item worktime">
+              <svg class="clock-icon" aria-hidden="true">
+                <use href="assets/svg/sprites.svg#clock-icon"></use>
+              </svg>
+              <span>Mon-Sat: 9:00-23:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
